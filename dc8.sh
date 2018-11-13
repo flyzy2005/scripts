@@ -29,6 +29,6 @@ do
     echo $A
     echo $B
     wget -qO- "https://api.64clouds.com/v1/migrate/start?location=${B}&veid=${VEID}&api_key=${API_KEY}"
-    sleep 30s
+    sleep 1800s
     info
 done
