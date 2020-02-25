@@ -35,6 +35,9 @@ backup() {
   rm /home/wwwroot/${web_name}/* -rf
   cp -rf /root/real_time_back/home/wwwroot/${web_name}/* /home/wwwroot/${web_name}/
 
+  # conf
+  cp -rf /root/real_time_back/${web_name}.conf /usr/local/nginx/conf/vhost/
+  
   # mysql file
   mysql -u${db_name} -p${db_passwd} ${db_name} < ${db_name}_${date_tmp}.sql
 
@@ -53,7 +56,6 @@ backup_SSL() {
   
   rm /usr/local/nginx/conf/ssl/${web_name}/* -rf
   cp -rf /root/real_time_back/usr/local/nginx/conf/ssl/${web_name}/* /usr/local/nginx/conf/ssl/${web_name}/
-  cp -rf /root/real_time_back/${web_name}.conf /usr/local/nginx/conf/vhost/
   
   rm /root/real_time_back/* -rf
 }
