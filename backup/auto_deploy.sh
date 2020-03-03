@@ -34,7 +34,8 @@ backup() {
 	# www file
   rm /home/wwwroot/${web_name}/* -rf
   cp -rf /root/real_time_back/home/wwwroot/${web_name}/* /home/wwwroot/${web_name}/
-
+  chown -R www:www /home/wwwroot/${web_name}/
+  
   # conf
   cp -rf /root/real_time_back/${web_name}.conf /usr/local/nginx/conf/vhost/
   
