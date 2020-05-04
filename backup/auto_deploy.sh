@@ -67,3 +67,5 @@ backup_SSL() {
 # backup BLOG_NAME MYSQL_USER MYSQL_PASS
 # backup_SSL BLOG_NAME
 # echo BLOG_NAME_ONLINE
+
+lnmp nginx restart
