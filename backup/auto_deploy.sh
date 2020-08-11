@@ -52,7 +52,7 @@ backup_SSL() {
   unzip ssl_${web_name}.zip > /dev/null
   if [ ! -d "/usr/local/nginx/conf/ssl/${web_name}" ]; then
   	mkdir /usr/local/nginx/conf/ssl/${web_name}
-  	echo /usr/local/nginx/conf/ssl/${web_name}
+  	# echo /usr/local/nginx/conf/ssl/${web_name}
   fi
   
   rm /usr/local/nginx/conf/ssl/${web_name}/* -rf
@@ -61,11 +61,17 @@ backup_SSL() {
   rm /root/real_time_back/* -rf
 }
 
+backup_In_All() {
+        echo '-------------------------------------------'
+        echo $1_START
+        backup $1 $2 $3
+        backup_SSL $1
+        echo $1_DONE
+        echo '-------------------------------------------'
+}
 
 # Sample:
 
-# backup BLOG_NAME MYSQL_USER MYSQL_PASS
-# backup_SSL BLOG_NAME
-# echo BLOG_NAME_ONLINE
+# backup_In_All BLOG_NAME MYSQL_USER MYSQL_PASS
 
 lnmp nginx restart
