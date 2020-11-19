@@ -1,6 +1,5 @@
 ###
 #  备份环境：基于LNMP一键包：https://www.vpsgo.com/linux-install-lnmp.html
-#  准备工作：新建对应的 MySQL 用户
 #  文件目录：利用 auto_transfer.sh 将文件备份在 /root/backup
 #  Usage: ./auto_depoly_no_db.sh
 ###
@@ -59,7 +58,7 @@ backup_SSL() {
 backup_In_All() {
         echo '-------------------------------------------'
         echo $1_START
-        backup $1 $2 $3
+        backup $1
         backup_SSL $1
         echo $1_DONE
         echo '-------------------------------------------'
@@ -67,6 +66,6 @@ backup_In_All() {
 
 # Sample:
 
-# backup_In_All BLOG_NAME MYSQL_USER MYSQL_PASS
+# backup_In_All BLOG_NAME
 
 lnmp nginx restart
