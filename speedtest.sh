@@ -48,7 +48,7 @@ speed() {
 	speed_test 'http://mirror.nl.leaseweb.net/speedtest/100mb.bin' 'Leaseweb, Netherlands, NL'
 	speed_test 'http://proof.ovh.ca/files/100Mio.dat' 'OVH, Montreal, CA'
 	speed_test 'http://tpdb.speed2.hinet.net/test_100m.zip' 'Hinet, Taiwan, TW'
-	next
+	# next
 }
 
 speed
