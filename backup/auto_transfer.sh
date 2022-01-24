@@ -17,7 +17,7 @@ if [ ! -d ${BACKUP_DIR} ]; then
 fi
 cd ${BACKUP_DIR}
 
-mysqldump -u$MYSQL_USER -p$MYSQL_PASS ${DB} > ${DB}_${DATE}.sql
+mysqldump --no-tablespaces -u$MYSQL_USER -p$MYSQL_PASS ${DB} > ${DB}_${DATE}.sql
 
 echo "SQL size: $(wc -c ${DB}_${DATE}.sql | awk '{print $1}')"
 
